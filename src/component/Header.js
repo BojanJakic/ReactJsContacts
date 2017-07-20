@@ -23,6 +23,7 @@ const Header = (props) => {
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/new-contact">New Contact</Link></li>
                             <li><Link to="/all-contact">Contact List</Link></li>
+                            <li><a href="https://github.com/BojanJakic/ReactJsContacts" target="_blank" rel="noopener noreferrer">Source Code</a></li>
                             </ul>
                         </div>
                     </div>
