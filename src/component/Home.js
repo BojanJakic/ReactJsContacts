@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-
+import '../style/Home.css';
 const Home = (props) => {
 
     return (

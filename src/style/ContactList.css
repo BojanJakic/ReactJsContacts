@@ -1,0 +1,21 @@
+.contact-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.contact {
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 3%;
+    box-shadow: 1px 5px 3px 0px silver,
+    -1px 0px 5px 0px silver;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.contact button {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-right: 2px;
+    margin-bottom: 2%;
+}

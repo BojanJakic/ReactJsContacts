@@ -1,0 +1,23 @@
+.footer-container {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.footer-container p {
+    font-size: 17px;
+}
+
+hr {
+    color: #919090;
+    background-color: #232020;
+    height: 1px;
+    width: 90%;
+}
+
+#footer {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 100%;
+}

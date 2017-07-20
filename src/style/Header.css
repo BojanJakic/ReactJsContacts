@@ -1,0 +1,11 @@
+.header {
+    background: #232020;
+}
+
+.header-title {
+    color: #00d8ff;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 30px !important;
+    font-size: 30px;
+}

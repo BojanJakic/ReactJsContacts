@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Notification from './Notification'
 import {addContact, editContact, deleteContact} from '../js/contactCRUD.js'
 import {isFirstNameValid, isLastNameValid, isEmailValid, isFormValid, isPhoneValid} from '../js/customValidator.js'
+import '../style/ContactForm.css';
 
 class ContactForm extends Component {
 
@@ -19,12 +20,6 @@ class ContactForm extends Component {
             isPhoneValid: false,
             isSubmitted: false,
         };
-
-    //    this.onChangeFirstNameHandler = this.onChangeFirstNameHandler.bind(this);
-       // this.onChangeLastNameHandler = this.onChangeLastNameHandler.bind(this);
-       // this.onChangeEmailHandler = this.onChangeEmailHandler.bind(this);
-       // this.onChangePhoneHandler = this.onChangePhoneHandler.bind(this);
-       // this.onSubmitHandler = this.onSubmitHandler.bind(this);
     }
 
     componentWillReceiveProps() {

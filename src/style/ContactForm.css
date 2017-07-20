@@ -1,0 +1,45 @@
+.form-header {
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: #232020;
+    color: #00d8ff;
+    font-size: 20px;
+}
+
+#contactForm {
+    box-shadow: 1px 5px 3px 0px silver,
+    -1px 0px 5px 0px silver;
+}
+
+.form-group {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.submit-btn {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-top: 15px;
+}
+
+.error {
+    border: 1px solid #a94442 !important;
+}
+
+.success {
+    border: 1px solid #3c763d !important;
+}
+
+.error-message {
+    font-size: 10px;
+    color: #a94442;
+}
+
+input[type="text"]:focus {
+    border-color: #d8d4d4;
+    box-shadow: 0 1px 1px #d8d4d4 inset, 0 0 8px #d8d4d4;
+}

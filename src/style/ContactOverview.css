@@ -1,0 +1,12 @@
+.contact-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #232020;
+    color: #00d8ff;
+    text-align: center;
+    font-size: 16px;
+}
+
+.contact p {
+    margin-left: 5px;
+}

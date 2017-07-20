@@ -10,7 +10,7 @@ class Notification extends Component {
             message: message,
             level: type,
             position: 'tc',
-            autoDismiss: 5
+            autoDismiss: 4
         })
     };
 

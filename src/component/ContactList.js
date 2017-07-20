@@ -5,6 +5,7 @@ import Notification from './Notification';
 import ModalForm from './ModalForm';
 import ContactOverview from './ContactOverview';
 import {getContactList} from '../js/contactCRUD.js'
+import '../style/ContactList.css';
 
 
 class ContactList extends Component {

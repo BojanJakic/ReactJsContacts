@@ -1,0 +1,17 @@
+.center-image {
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 5%;
+}
+
+.img-home {
+    display: block;
+    margin: 0 auto;
+    height: 40vh;
+    width: 40vh;
+}
+
+.ul-title {
+    font-weight: bold;
+    list-style: none;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../style/ContactOverview.css'
 
 const ContactOverview = (props) => {
 
