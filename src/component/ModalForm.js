@@ -1,37 +1,49 @@
 import React, {Component} from 'react';
 import ContactForm from './ContactForm';
-import {Modal,Button} from 'react-bootstrap';
+import {Modal, Button} from 'react-bootstrap';
 
 
-class ModalForm extends Component{
+class ModalForm extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            showModal : false,
-            index : 0
+            showModal: false,
+            index: 0
         }
     }
 
-    openModal = (index) => {
-        this.setState({showModal:true,index : index })
+    openModal = () => {
+        this.setState({showModal: true});
     };
 
     closeModal = () => {
         this.setState({showModal: false})
     };
 
+    componentDidMount = () => {
+        this.openModal();
+    };
+
+    componentWillReceiveProps = (nextProps) => {
+
+        if(nextProps.shouldCloseModal){
+            this.closeModal();
+        }else {
+            this.openModal();
+        }
+
+    };
+
     render = () => {
 
         return (
             <div>
-                <Modal show={this.state.showModal} onHide={this.close}>
-                    <Modal.Header closeButton>
-                        <Modal.Title></Modal.Title>
-                    </Modal.Header>
+                <Modal show={this.state.showModal}>
                     <Modal.Body>
-                        <ContactForm closeModal={() => this.closeModal()} initInputValue={this.props.init[this.state.index]}
-                                     buttonAction={this.props.buttonAction} reloadAfterClick={this.props.reloadAfterClick}/>
+                        <ContactForm initInputValue={this.props.init[this.props.index]}
+                                     buttonAction={this.props.buttonAction}
+                                     reloadContactList={this.props.reloadContactList}/>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button onClick={() => this.closeModal()}>Close</Button>
