@@ -27,12 +27,11 @@ class ModalForm extends Component {
 
     componentWillReceiveProps = (nextProps) => {
 
-        if(nextProps.shouldCloseModal){
+        if (nextProps.shouldCloseModal) {
             this.closeModal();
-        }else {
-            this.openModal();
+            return;
         }
-
+        this.openModal();
     };
 
     render = () => {

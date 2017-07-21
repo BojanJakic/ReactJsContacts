@@ -34,9 +34,9 @@ class ContactList extends Component {
     };
 
     reloadContacts = () => {
-        console.log("sdfgs")
         this.setState({contacts: getContactList(), closeModal : true});
         this.notifyUser();
+        this.setState({buttonAction : ""})
     };
 
     notifyUser = () => {

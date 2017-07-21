@@ -107,7 +107,6 @@ class ContactForm extends Component {
 
     cleanUp = () => {
         var action = document.getElementsByClassName('submit-btn')[0].innerText;
-console.log(action)
         if (action === 'EDIT' || action === 'DELETE') {
             this.props.reloadContactList();
         }else if(action === 'SAVE'){
