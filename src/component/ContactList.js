@@ -15,6 +15,8 @@ class ContactList extends Component {
         this.state = {
             buttonAction: "",
             contacts: getContactList(),
+            clickedContactIndex : "",
+            closeModal : false
         }
     }
 
@@ -25,18 +27,15 @@ class ContactList extends Component {
 
     };
 
-    handleEditButton = (index) => {
-        this.setState({buttonAction: "EDIT"});
-        this.modal.openModal(index)
-    };
+    onClickHandler = (evt,index) => {
+        var buttonText = evt.target.textContent;
+        this.setState({buttonAction : buttonText ,clickedContactIndex : index});
 
-    handleDeleteButton = (index) => {
-        this.setState({buttonAction: "DELETE"});
-        this.modal.openModal(index)
     };
 
     reloadContacts = () => {
-        this.setState({contacts: getContactList()});
+        console.log("sdfgs")
+        this.setState({contacts: getContactList(), closeModal : true});
         this.notifyUser();
     };
 
@@ -63,10 +62,10 @@ class ContactList extends Component {
                                         <ContactOverview currentContact={currentContact} iteration={index}/>
                                         <div className="text-center">
                                         <button className="btn btn-primary"
-                                                onClick={() => this.handleEditButton(index)}>Edit
+                                                onClick={(evt) => this.onClickHandler(evt, index)}>EDIT
                                         </button>
                                         <button className="btn btn-primary"
-                                                onClick={() => this.handleDeleteButton(index)}>Delete
+                                                onClick={(evt) => this.onClickHandler(evt, index)}>DELETE
                                         </button>
                                         </div>
                                     </div>
@@ -74,8 +73,8 @@ class ContactList extends Component {
                             )
                         })
                     }
-                    <ModalForm ref={modal => this.modal = modal} init={this.state.contacts}
-                               buttonAction={this.state.buttonAction} reloadAfterClick={() => this.reloadContacts()}/>
+                    {this.state.buttonAction !== '' && <ModalForm index={this.state.clickedContactIndex} init={this.state.contacts}
+                               buttonAction={this.state.buttonAction} reloadContactList={() => this.reloadContacts()} shouldCloseModal={this.state.closeModal}/>}
                 </div>
                 <Footer />
             </div>
