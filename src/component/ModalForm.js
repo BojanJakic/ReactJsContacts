@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ContactForm from './ContactForm';
+import Contact from './Contact';
 import {Modal, Button} from 'react-bootstrap';
 
 
@@ -14,6 +14,7 @@ class ModalForm extends Component {
     }
 
     openModal = () => {
+
         this.setState({showModal: true});
     };
 
@@ -26,8 +27,8 @@ class ModalForm extends Component {
     };
 
     componentWillReceiveProps = (nextProps) => {
-
         if (nextProps.shouldCloseModal) {
+
             this.closeModal();
             return;
         }
@@ -40,9 +41,8 @@ class ModalForm extends Component {
             <div>
                 <Modal show={this.state.showModal}>
                     <Modal.Body>
-                        <ContactForm initInputValue={this.props.init[this.props.index]}
-                                     buttonAction={this.props.buttonAction}
-                                     reloadContactList={this.props.reloadContactList}/>
+                        <Contact initInputValue={this.props.init[this.props.index]} buttonAction={this.props.buttonAction}
+                                 reloadContactList={this.props.reloadContactList}/>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button onClick={() => this.closeModal()}>Close</Button>

@@ -29,8 +29,7 @@ class ContactList extends Component {
 
     onClickHandler = (evt,index) => {
         var buttonText = evt.target.textContent;
-        this.setState({buttonAction : buttonText ,clickedContactIndex : index});
-
+        this.setState({buttonAction : buttonText ,clickedContactIndex : index, closeModal : false});
     };
 
     reloadContacts = () => {
