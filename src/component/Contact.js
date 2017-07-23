@@ -10,7 +10,11 @@ class Contact extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
+        this.state = this.init();
+    }
+
+    init = () => {
+        return {
             contact: {
                 id: "",
                 firstName: "",
@@ -24,9 +28,9 @@ class Contact extends Component {
             isPhoneValid: false,
             isSubmitted: false,
         };
-    }
+    };
 
-    componentWillReceiveProps() {
+    componentWillReceiveProps = () => {
         if (this.props.initInputValue !== undefined) {
             this.setState({contact: this.props.initInputValue})
         }
@@ -144,20 +148,7 @@ class Contact extends Component {
     };
 
     resetForm = () => {
-        this.setState({
-            contact: {
-                id: "",
-                firstName: "",
-                lastName: "",
-                email: "",
-                phone: ""
-            },
-            isFirstNameValid: false,
-            isLastNameValid: false,
-            isEmailValid: false,
-            isPhoneValid: false,
-            isSubmitted: false,
-        })
+        this.setState(this.init())
     };
 
     getAllInputs = () => {
@@ -168,9 +159,10 @@ class Contact extends Component {
     render = () => {
         return (
             <div>
-            <Notification ref={notification => this.notification = notification}/>
-            <ContactForm initContact={this.state.contact} changeHandler={this.onChangeHandler} submitHandler={this.onSubmitHandler}
-                         btnValue={this.props.buttonAction || 'SAVE'}/>
+                <Notification ref={notification => this.notification = notification}/>
+                <ContactForm initContact={this.state.contact} changeHandler={this.onChangeHandler}
+                             submitHandler={this.onSubmitHandler}
+                             btnValue={this.props.buttonAction || 'SAVE'}/>
             </div>
         )
     }
