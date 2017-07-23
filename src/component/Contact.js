@@ -42,7 +42,7 @@ class Contact extends Component {
                 inputs[i].setAttribute('readonly', 'readonly');
             }
         }
-    }
+    };
 
     onChangeHandler = (evt) => {
         var inputField = evt.target.name;
