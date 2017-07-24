@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Contact from './Contact';
 import {Modal, Button} from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 
 class ModalForm extends Component {
@@ -53,5 +54,13 @@ class ModalForm extends Component {
     }
 
 }
+
+ModalForm.PropTypes = {
+    init : PropTypes.array,
+    buttonAction : PropTypes.oneOf(['EDIT','DELETE']),
+    reloadContactList : PropTypes.func,
+    shouldCloseModal : PropTypes.bool,
+    index : PropTypes.number
+};
 
 export default ModalForm;

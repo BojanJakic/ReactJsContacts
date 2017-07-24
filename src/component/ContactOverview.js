@@ -1,5 +1,6 @@
 import React from 'react';
-import '../style/ContactOverview.css'
+import PropTypes from 'prop-types';
+import '../style/ContactOverview.css';
 
 const ContactOverview = (props) => {
 
@@ -12,6 +13,16 @@ const ContactOverview = (props) => {
             <p><strong>Phone : </strong>{props.currentContact.phone}</p>
         </div>
     )
+};
+
+ContactOverview.PropTypes = {
+    currentContact : PropTypes.shape({
+        id : PropTypes.number,
+        firstName : PropTypes.string,
+        lastName : PropTypes.string,
+        email : PropTypes.string,
+        phone : PropTypes.string,
+    })
 };
 
 export default ContactOverview;

@@ -4,6 +4,7 @@ import ContactForm from './ContactForm'
 import {addContact, editContact, deleteContact} from '../js/contactCRUD.js'
 import {isFirstNameValid, isLastNameValid, isEmailValid, isFormValid, isPhoneValid} from '../js/customValidator.js'
 import update from 'immutability-helper';
+import PropTypes from 'prop-types';
 import '../style/ContactForm.css';
 
 class Contact extends Component {
@@ -167,5 +168,11 @@ class Contact extends Component {
         )
     }
 }
+
+Contact.PropTypes = {
+    buttonAction : PropTypes.oneOf(['EDIT','DELETE']),
+    reloadContactList : PropTypes.func,
+    initInputValue : PropTypes.object
+};
 
 export default Contact;
